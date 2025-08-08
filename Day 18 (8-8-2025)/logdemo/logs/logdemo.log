@@ -1,0 +1,20 @@
+2025-08-08T12:37:57.102+05:30 ERROR 27780 --- [logdemo] [http-nio-8080-exec-3] c.w.logdemo.controller.HomeController    : --Error--
+2025-08-08T12:37:57.104+05:30  WARN 27780 --- [logdemo] [http-nio-8080-exec-3] c.w.logdemo.controller.HomeController    : --WARN--
+2025-08-08T14:05:59.142+05:30  WARN 38432 --- [logdemo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-08-08T14:05:59.167+05:30  WARN 38432 --- [logdemo] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-08-08T14:05:59.213+05:30 ERROR 38432 --- [logdemo] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2025-08-08T14:06:26.450+05:30 ERROR 35328 --- [logdemo] [http-nio-8080-exec-2] c.w.logdemo.controller.HomeController    : --Error--
+2025-08-08T14:06:26.451+05:30  WARN 35328 --- [logdemo] [http-nio-8080-exec-2] c.w.logdemo.controller.HomeController    : --WARN--
