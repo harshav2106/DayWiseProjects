@@ -1,0 +1,8 @@
+.text-box {
+      background-color: #ebf1f1;
+      margin: 50px 0 0 100px; 
+      padding: 10px 20px 5px 90px;
+      border: 25px solid #d8ce11;
+      width: fit-content;
+      font-family: Arial, sans-serif;
+    }
