@@ -1,0 +1,16 @@
+* {
+      color: blue;
+      font-size: 20px;
+   }
+#main-heading {
+      color: red;
+      font-size: 30px;
+    }
+.highlight {
+      color: green;
+      font-size: 25px;
+    }
+h1, p {
+      text-align: center;
+      font-weight: bold;
+    }
