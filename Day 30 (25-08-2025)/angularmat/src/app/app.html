@@ -1,0 +1,133 @@
+<!-- <mat-list>
+  <h3 mat-subheader>List of Cities</h3>
+  <mat-list-item *ngFor="let city of cities">
+    {{ city }}
+  </mat-list-item>
+</mat-list> -->
+
+
+
+
+<!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>> Ex-2 >>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+<!-- <h2>User Form (Stepper)</h2>
+
+<mat-vertical-stepper linear>
+  
+  <mat-step [stepControl]="nameForm">
+    <form [formGroup]="nameForm">
+      <ng-template matStepLabel>Name</ng-template>
+      <mat-form-field appearance="fill" class="full">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" />
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  
+  <mat-step [stepControl]="ageForm">
+    <form [formGroup]="ageForm">
+      <ng-template matStepLabel>Age</ng-template>
+      <mat-form-field appearance="fill" class="full">
+        <mat-label>Age</mat-label>
+        <input matInput formControlName="age" type="number" />
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="emailForm">
+    <form [formGroup]="emailForm">
+      <ng-template matStepLabel>Email</ng-template>
+      <mat-form-field appearance="fill" class="full">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" />
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" (click)="onSubmit()">
+          Submit
+        </button>
+      </div>
+    </form>
+  </mat-step>
+</mat-vertical-stepper> -->
+
+<!-- Ex -- 3 -->
+ <!-- <h3>Exercise 3</h3>
+ <input type="text" [formControl]="inputControl" placeholder="Type something" />
+
+<p>Reversed: {{ reversedText }}</p> -->
+
+<!-- Ex--4 -->
+ 
+ <form [formGroup]="regForm" (ngSubmit)="onSubmit()" style="max-width: 400px; margin: auto; display: flex; flex-direction: column; gap: 20px;">
+
+  
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" />
+    @if (regForm.controls['name'].invalid && (regForm.controls['name'].dirty || regForm.controls['name'].touched)) {
+      @if (regForm.controls['name'].errors?.['required']) {
+        <mat-error>Name is required</mat-error>
+      }
+      @if (regForm.controls['name'].errors?.['minlength']) {
+        <mat-error>Minimum 3 characters</mat-error>
+      }
+    }
+  </mat-form-field>
+
+  
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput type="email" formControlName="email" />
+    @if (regForm.controls['email'].invalid && (regForm.controls['email'].dirty || regForm.controls['email'].touched)) {
+      @if (regForm.controls['email'].errors?.['required']) {
+        <mat-error>Email is required</mat-error>
+      }
+      @if (regForm.controls['email'].errors?.['email']) {
+        <mat-error>Invalid email format</mat-error>
+      }
+    }
+  </mat-form-field>
+
+  
+  <mat-form-field appearance="fill">
+    <mat-label>Date of Birth</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="dob" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    @if (regForm.controls['dob'].invalid && (regForm.controls['dob'].dirty || regForm.controls['dob'].touched)) {
+      @if (regForm.controls['dob'].errors?.['required']) {
+        <mat-error>Date of Birth is required</mat-error>
+      }
+    }
+  </mat-form-field>
+
+  
+  <mat-form-field appearance="fill">
+    <mat-label>Subject of Study</mat-label>
+    <mat-select formControlName="subject">
+      <mat-option *ngFor="let subj of subjects" [value]="subj">{{ subj }}</mat-option>
+    </mat-select>
+    @if (regForm.controls['subject'].invalid && (regForm.controls['subject'].dirty || regForm.controls['subject'].touched)) {
+      @if (regForm.controls['subject'].errors?.['required']) {
+        <mat-error>Subject is required</mat-error>
+      }
+    }
+  </mat-form-field>
+
+  
+  <button mat-raised-button color="primary" type="submit" [disabled]="regForm.invalid">
+    Submit
+  </button>
+
+</form>
+
+
+
